@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-content>
+    <v-content fluid>
       <v-sheet light class="px-3 pt-3 pb-12">
         <v-skeleton-loader class="mx-auto" type="card">
           <v-row>
