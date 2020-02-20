@@ -1,41 +1,40 @@
 <template>
   <v-app>
-    <v-content fluid>
-      <v-sheet light class="px-3 pt-3 pb-12">
-        <v-skeleton-loader class="mx-auto" type="card">
-          <v-row>
-            <v-col class="xs12">
-              <caloriecalculator :send_calories="send_calories"/>
-            </v-col>
-            <v-col v-if="tdee_calories != 0" class="xs12">
-              <macrocalculator :calories="tdee_calories" />
-            </v-col>
-          </v-row>
-        </v-skeleton-loader>
-      </v-sheet>
+     <app-navigation-drawer></app-navigation-drawer>
+    <v-content>
+      <v-container class="grey lighten-5" fluid="fluid" fill-height="fill-height">
+        <router-view></router-view>
+      </v-container>
+
+          
+            
+            
+          
     </v-content>
   </v-app>
 </template>
 
 <script>
-import caloriecalculator from './components/calorie_calculator';
-import macrocalculator from './components/macro_calculator';
+
+import NavigationDrawer from './components/navigation.vue';
 
 export default {
   name: 'App',
 
-  components: {
-    caloriecalculator,
-    macrocalculator
-  },
+  components: { 'app-navigation-drawer': NavigationDrawer },
+
 
   data: () => ({
     tdee_calories: 0,
     calories: 0,
+    items: [
+          { title: 'Dashboard', icon: 'mdi-view-dashboard' },
+          { title: 'Photos', icon: 'mdi-image' },
+          { title: 'About', icon: 'mdi-help-box' },
+        ],
   }),
   methods:{
     send_calories(value){
-      console.log(value)
       this.tdee_calories = value;
     }
   }
