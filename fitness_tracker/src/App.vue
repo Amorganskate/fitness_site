@@ -5,19 +5,12 @@
       <v-container class="grey lighten-5" fluid="fluid" fill-height="fill-height">
         <router-view></router-view>
       </v-container>
-
-          
-            
-            
-          
     </v-content>
   </v-app>
 </template>
 
 <script>
-
 import NavigationDrawer from './components/navigation.vue';
-
 export default {
   name: 'App',
 
@@ -34,9 +27,8 @@ export default {
         ],
   }),
   methods:{
-    send_calories(value){
-      this.tdee_calories = value;
-    }
+  },
+  mounted(){
   }
 };
 </script>

@@ -1,11 +1,12 @@
 const navigation = [
     {
         name: 'Home',
-        to: '/index'
+        to: '/home',
+        icon: 'mdiHome'
     },
     {
         name: 'Calculators',
-        to: '/calorie_calculator'
+        to: '/calculators'
     }
 ]
 
